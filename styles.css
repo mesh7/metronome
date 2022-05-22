@@ -2,5 +2,61 @@
 
 * {
     font-family: 'Nunito Sans', sans-serif;
-    background-color: rgb(126, 126, 126);
+
+    background-color: #2190F7;
+    color: #ffffff;
+}
+
+.metronome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.bpm-display-tempo {
+    font-size: 6rem;
+    font-weight: 700;
+}
+
+.bpm-display-text {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.tempo-text {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.tempo-adjust {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: grey;
+    font-size: 3rem;
+}
+
+.tempo-controls {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.bpm-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bpm-control-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.bpm-control {
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: grey;
 }
