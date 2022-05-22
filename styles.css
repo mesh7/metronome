@@ -1,40 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700&display=swap');
 
 * {
+    padding: 0;
+    margin: 0;
     font-family: 'Nunito Sans', sans-serif;
-
     background-color: #2190F7;
     color: #ffffff;
 }
 
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .metronome {
+    height: 400px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
 }
-
 
 .bpm-display-tempo {
     font-size: 6rem;
-    font-weight: 700;
+    font-weight: bold;
 }
 
 .bpm-display-text {
-    font-size: 1.5rem;
+    font-size: 1rem;
     text-align: center;
+    font-weight: bold;
 }
 
 .tempo-text {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     text-align: center;
 }
 
 .tempo-adjust {
-    height: 3rem;
-    width: 3rem;
+    height: 4rem;
+    width: 4rem;
     border-radius: 50%;
     background-color: grey;
-    font-size: 3rem;
+    font-size: 3.5rem;
+    text-align: center;
 }
 
 .tempo-controls {
@@ -47,6 +60,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1.5rem;
+    text-align: center;
 }
 
 .bpm-control-buttons {
@@ -55,8 +70,8 @@
 }
 
 .bpm-control {
-    height: 2rem;
-    width: 2rem;
+    height: 2.5rem;
+    width: 2.5rem;
     border-radius: 50%;
     background-color: grey;
 }
