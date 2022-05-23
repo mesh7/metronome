@@ -17,8 +17,8 @@
 }
 
 .metronome {
-    height: 400px;
-    width: 300px;
+    height: 34rem;
+    width: 20rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,12 +48,38 @@
     background-color: grey;
     font-size: 3.5rem;
     text-align: center;
+    cursor: pointer;
+}
+
+.tempo-adjust:hover {
+    background-color: #f0f0f0;
+    color: #2190F7;
+}
+
+.tempo-decrease {
+    line-height: 3.5rem;
+}
+
+.tempo-increase {
+    line-height: 3.75rem;
 }
 
 .tempo-controls {
     display: flex;
     align-items: center;
     gap: 2rem;
+}
+
+.metronome-button {
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    line-height: 7rem;
+    text-align: center;
+    font-size: 1.5rem;
 }
 
 .bpm-controls {
@@ -74,4 +100,24 @@
     width: 2.5rem;
     border-radius: 50%;
     background-color: grey;
+}
+
+.bpm-control:hover {
+    background-color: #f0f0f0;
+    color: #2190F7;
+}
+
+.bpm-value {
+    line-height: 2.5rem;
+    font-size: 1.5rem;
+}
+
+.bpm-decrease {
+    line-height: 2.5rem;
+    cursor: pointer;
+}
+
+.bpm-increase {
+    line-height: 2.5rem;
+    cursor: pointer;
 }
