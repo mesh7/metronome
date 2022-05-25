@@ -8,16 +8,25 @@
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
+.header {
+    margin: 2rem 0 3rem 0;
+    font-size: 4rem;
+    font-weight: 600;
+    letter-spacing: 1rem;
+    text-align: center;
+}
+
 .metronome {
     height: 34rem;
-    width: 20rem;
+    width: 30rem;
+    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,6 +114,12 @@ input[type=range]::-webkit-slider-runnable-track {
     background-color: grey;
 }
 
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 1px;
+    background-color: grey;
+}
+
 .metronome-button {
     height: 7rem;
     width: 7rem;
@@ -155,4 +170,10 @@ input[type=range]::-webkit-slider-runnable-track {
 .bpm-increase {
     line-height: 2.5rem;
     cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        background-color: lightgreen;
+    }
 }
