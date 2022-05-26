@@ -11,12 +11,14 @@ const bpmValue = document.querySelector(".bpm-value");
 
 let bpm = 140;
 let beatsPerMeasure = 4;
+let tempoTextString = "Medium";
 
 tempoDecrease.addEventListener("click", () => {
   if (bpm <= 20) {
     return;
   }
   bpm--;
+  validateTempo();
   updateMetronome();
 });
 
@@ -25,11 +27,13 @@ tempoIncrease.addEventListener("click", () => {
     return;
   }
   bpm++;
+  validateTempo();
   updateMetronome();
 });
 
 tempoSlider.addEventListener("input", () => {
   bpm = tempoSlider.value;
+  validateTempo();
   updateMetronome();
 });
 
@@ -53,8 +57,37 @@ bpmIncrease.addEventListener("click", () => {
 function updateMetronome() {
   tempoDisplay.textContent = bpm;
   tempoSlider.value = bpm;
+  setText();
 }
 
+function setText() {
+  if (bpm <= 40) {
+    tempoTextString = "Super Slow";
+  } else if (bpm >= 40 && bpm < 80) {
+    tempoTextString = "Slow";
+  } else if (bpm >= 80 && bpm < 120) {
+    tempoTextString = "Getting there";
+  } else if (bpm >= 120 && bpm < 180) {
+    tempoTextString = "Nice and Steady";
+  } else if (bpm >= 180 && bpm < 220) {
+    tempoTextString = "Rock n' Roll";
+  } else if (bpm >= 220 && bpm < 240) {
+    tempoTextString = "Funky!";
+  } else {
+    tempoTextString = "Bethoven";
+  }
+
+  tempoText.textContent = tempoTextString;
+}
+
+function validateTempo() {
+  if (bpm <= 20) {
+    return;
+  }
+  if (bpm >= 280) {
+    return;
+  }
+}
 // function callBeep() {
 //   var audio = new Audio("audio\beat1.mp3");
 //   audio.play();

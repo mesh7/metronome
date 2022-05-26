@@ -4,7 +4,8 @@
     padding: 0;
     margin: 0;
     font-family: 'Nunito Sans', sans-serif;
-    color: black
+    color: black;
+    text-transform: uppercase;
 }
 
 body {
