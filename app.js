@@ -17,8 +17,7 @@ tempoDecrease.addEventListener("click", () => {
     return;
   }
   bpm--;
-  tempoDisplay.textContent = bpm;
-  tempoSlider.value = bpm;
+  updateMetronome();
 });
 
 tempoIncrease.addEventListener("click", () => {
@@ -26,14 +25,12 @@ tempoIncrease.addEventListener("click", () => {
     return;
   }
   bpm++;
-  tempoDisplay.textContent = bpm;
-  tempoSlider.value = bpm;
+  updateMetronome();
 });
 
 tempoSlider.addEventListener("input", () => {
   bpm = tempoSlider.value;
-  tempoDisplay.textContent = bpm;
-  tempoSlider.value = bpm;
+  updateMetronome();
 });
 
 bpmDecrease.addEventListener("click", () => {
@@ -41,7 +38,7 @@ bpmDecrease.addEventListener("click", () => {
     return;
   }
   beatsPerMeasure--;
-  bpmValue = beatsPerMeasure;
+  bpmValue.textContent = beatsPerMeasure;
 });
 
 bpmIncrease.addEventListener("click", () => {
@@ -49,8 +46,14 @@ bpmIncrease.addEventListener("click", () => {
     return;
   }
   beatsPerMeasure++;
-  bpmValue = beatsPerMeasure;
+  bpmValue.textContent = beatsPerMeasure;
+  console.log(bpmValue);
 });
+
+function updateMetronome() {
+  tempoDisplay.textContent = bpm;
+  tempoSlider.value = bpm;
+}
 
 // function callBeep() {
 //   var audio = new Audio("audio\beat1.mp3");
