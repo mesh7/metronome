@@ -8,6 +8,14 @@ const metronomeButton = document.querySelector(".metronome-button");
 const bpmDecrease = document.querySelector(".bpm-decrease");
 const bpmIncrease = document.querySelector(".bpm-increase");
 const bpmValue = document.querySelector(".bpm-value");
+const clickOne = new Audio("./audio/beat1.mp3");
+const clickTwo = new Audio("./audio/beat2.mp3");
+
+playBeatOne();
+
+function playBeatOne() {
+  
+}
 
 let bpm = 140;
 let beatsPerMeasure = 4;
@@ -88,6 +96,7 @@ function validateTempo() {
     return;
   }
 }
+
 // function callBeep() {
 //   var audio = new Audio("audio\beat1.mp3");
 //   audio.play();
