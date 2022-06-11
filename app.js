@@ -1,3 +1,5 @@
+import Timer from "./timer.js";
+
 const tempoDisplay = document.querySelector(".bpm-display-tempo");
 const textDisplay = document.querySelector(".bpm-display-text");
 const tempoText = document.querySelector(".tempo-text");
@@ -10,12 +12,6 @@ const bpmIncrease = document.querySelector(".bpm-increase");
 const bpmValue = document.querySelector(".bpm-value");
 const clickOne = new Audio("./audio/beat1.mp3");
 const clickTwo = new Audio("./audio/beat2.mp3");
-
-playBeatOne();
-
-function playBeatOne() {
-  
-}
 
 let bpm = 140;
 let beatsPerMeasure = 4;
@@ -97,12 +93,14 @@ function validateTempo() {
   }
 }
 
-// function callBeep() {
-//   var audio = new Audio("audio\beat1.mp3");
-//   audio.play();
-//   console.log("Sound");
-// }
+metronomeButton.addEventListener("click", () => {
+  metronome.start();
+});
 
-// callBeep();
+function playClick() {
+  clickOne.play();
+}
 
-// setInterval(callBeep, 1000);
+const metronome = new Timer(playClick, 6000 / bpm, { immediate: true });
+
+// metronome.start();
