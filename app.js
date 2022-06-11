@@ -10,11 +10,14 @@ const metronomeButton = document.querySelector(".metronome-button");
 const bpmDecrease = document.querySelector(".bpm-decrease");
 const bpmIncrease = document.querySelector(".bpm-increase");
 const bpmValue = document.querySelector(".bpm-value");
+
 const clickOne = new Audio("./audio/beat1.mp3");
 const clickTwo = new Audio("./audio/beat2.mp3");
 
 let bpm = 140;
 let beatsPerMeasure = 4;
+let count = 0;
+let isRunning = false;
 let tempoTextString = "Medium";
 
 tempoDecrease.addEventListener("click", () => {
@@ -47,6 +50,7 @@ bpmDecrease.addEventListener("click", () => {
   }
   beatsPerMeasure--;
   bpmValue.textContent = beatsPerMeasure;
+  count = 0;
 });
 
 bpmIncrease.addEventListener("click", () => {
@@ -55,12 +59,13 @@ bpmIncrease.addEventListener("click", () => {
   }
   beatsPerMeasure++;
   bpmValue.textContent = beatsPerMeasure;
-  console.log(bpmValue);
+  count = 0;
 });
 
 function updateMetronome() {
   tempoDisplay.textContent = bpm;
   tempoSlider.value = bpm;
+  metronome.timeInterval = 60000 / bpm;
   setText();
 }
 
@@ -78,7 +83,7 @@ function setText() {
   } else if (bpm >= 220 && bpm < 240) {
     tempoTextString = "Funky!";
   } else {
-    tempoTextString = "Bethoven";
+    tempoTextString = "Beethoven";
   }
 
   tempoText.textContent = tempoTextString;
@@ -94,13 +99,32 @@ function validateTempo() {
 }
 
 metronomeButton.addEventListener("click", () => {
-  metronome.start();
+  count = 0;
+  if (!isRunning) {
+    metronome.start();
+    isRunning = true;
+    metronomeButton.textContent = "STOP";
+  } else {
+    metronome.stop();
+    isRunning = false;
+    metronomeButton.textContent = "START";
+  }
 });
 
 function playClick() {
-  clickOne.play();
+  if (count === beatsPerMeasure) {
+    count = 0;
+  }
+  if (count === 0) {
+    clickOne.play();
+    clickOne.currentTime = 0;
+  } else {
+    clickTwo.play();
+    clickTwo.currentTime = 0;
+  }
+  count++;
 }
 
-const metronome = new Timer(playClick, 6000 / bpm, { immediate: true });
+const metronome = new Timer(playClick, 60000 / bpm, { immediate: true });
 
 // metronome.start();
