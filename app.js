@@ -1,7 +1,6 @@
 import Timer from "./timer.js";
 
 const tempoDisplay = document.querySelector(".bpm-display-tempo");
-const textDisplay = document.querySelector(".bpm-display-text");
 const tempoText = document.querySelector(".tempo-text");
 const tempoDecrease = document.querySelector(".tempo-decrease");
 const tempoSlider = document.querySelector(".slider");
@@ -126,5 +125,3 @@ function playClick() {
 }
 
 const metronome = new Timer(playClick, 60000 / bpm, { immediate: true });
-
-// metronome.start();
