@@ -218,7 +218,9 @@ input[type=range]::-moz-range-track {
     font-weight: 600;
     letter-spacing: 0.75rem;
     text-align: center;
+    font-weight: bold;
     font-family: 'Nunito Sans', sans-serif;
+    color: #BD3538;
 }
 
 
