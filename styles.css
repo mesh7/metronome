@@ -62,7 +62,7 @@ body {
     cursor: pointer;
 }
 
-.tempo-adjust:hover {
+.tempo-adjust:hover .tempo-adjust:active {
     background-color: #f0f0f0;
     color: #BD3538;
 }
@@ -142,7 +142,7 @@ input[type=range]::-moz-range-track {
     font-weight: bold;
 }
 
-.metronome-button:hover {
+.metronome-button:hover .metronome-button:active {
     background-color: #f0f0f0;
     color: #BD3538;
 }
@@ -169,7 +169,7 @@ input[type=range]::-moz-range-track {
     background-color: #BD3538;
 }
 
-.bpm-control:hover {
+.bpm-control:hover .bpm-control:active {
     background-color: #f0f0f0;
     color: #BD3538;
 }
@@ -193,7 +193,7 @@ input[type=range]::-moz-range-track {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     font-size: 1.25rem;
-    
+
 }
 
 .footer {
