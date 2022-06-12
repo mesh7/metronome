@@ -82,7 +82,7 @@ function setText() {
   } else if (bpm >= 220 && bpm < 240) {
     tempoTextString = "Funky!";
   } else {
-    tempoTextString = "Beethoven";
+    tempoTextString = "Ludwig van Beethoven";
   }
 
   tempoText.textContent = tempoTextString;
