@@ -235,7 +235,9 @@ input[type=range]::-moz-range-track {
 }
 
 @media screen and (max-width: 425px) {
-    body {}
+    .container {
+        margin: 0.5rem 0 0 0;
+    }
 
     .header {
         font-size: 2rem;
@@ -248,6 +250,10 @@ input[type=range]::-moz-range-track {
 
     .metronome {
         width: 100%;
+    }
+
+    .tempo-text {
+        font-size: 1rem;
     }
 
     .tempo-adjust {
@@ -267,7 +273,17 @@ input[type=range]::-moz-range-track {
         gap: 1.5rem;
     }
 
+    .bpm-controls-text {
+        font-size: 0.875rem;
+    }
+
     input[type=range] {
         width: 8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        margin: 0.5rem 0 0 0;
     }
 }
