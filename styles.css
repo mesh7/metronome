@@ -14,19 +14,21 @@ body {
 }
 
 .container {
-    /* display: flex;
-    flex-direction: column; */
+    display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 100vh; */
-    margin: 3.5rem 0 0 0;
+    margin: 1.5rem 0 0 0;
     padding: 1.5rem;
+    position: relative;
+}
+
+.hero-image {
+    margin-left: 11rem;
 }
 
 .metronome {
-    height: 34rem;
-    width: 100%;
-    margin: auto;
+    height: 32rem;
+    max-width: 40rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,10 +46,12 @@ body {
     text-align: center;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.145em;
+
 }
 
 .tempo-text {
-    font-size: 1.25rem;
+    font-size: 1rem;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
@@ -177,6 +181,7 @@ input[type=range]::-moz-range-track {
 .bpm-value {
     line-height: 2.5rem;
     font-size: 1.5rem;
+    font-weight: 500;
 }
 
 .bpm-decrease {
@@ -215,7 +220,6 @@ input[type=range]::-moz-range-track {
 }
 
 .header {
-    margin: 2rem 0 0 0;
     font-size: 3rem;
     font-weight: 600;
     letter-spacing: 0.75rem;
@@ -234,6 +238,34 @@ input[type=range]::-moz-range-track {
 
 .text {
     margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .hero-image {
+        height: 15rem;
+        margin-left: 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        margin: 0;
+    }
+
+    .metronome {
+        height: 30rem;
+    }
+
+    .hero-image {
+        height: 12rem;
+        margin-left: 3rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .hero-image {
+       display: none;
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -281,15 +313,5 @@ input[type=range]::-moz-range-track {
 
     input[type=range] {
         width: 8rem;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .container {
-        margin: 0;
-    }
-
-    .metronome {
-        height: 30rem;
     }
 }
